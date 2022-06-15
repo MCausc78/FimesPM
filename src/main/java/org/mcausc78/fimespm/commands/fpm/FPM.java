@@ -1,6 +1,7 @@
 package org.mcausc78.fimespm.commands.fpm;
 
 import org.bukkit.command.CommandSender;
+import org.mcausc78.fimespm.commands.fpm.sub.HelpCommand;
 import org.mcausc78.fimespm.utils.ArrayUtils;
 
 import org.bukkit.command.Command;

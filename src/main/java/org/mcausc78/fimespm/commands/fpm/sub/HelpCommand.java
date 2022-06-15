@@ -5,7 +5,7 @@ import org.mcausc78.fimespm.ConfigMessagesKeys;
 import org.mcausc78.fimespm.FimesPMPlugin;
 
 public class HelpCommand {
-    public static int execute(CommandSender cs, String ) {
+    public static int execute(CommandSender cs) {
         FimesPMPlugin.getInstance().getConfig().getStringList(HELP_LIST_KEY).forEach(message -> {
 
         });
