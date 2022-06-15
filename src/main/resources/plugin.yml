@@ -1,0 +1,7 @@
+name: '${project.name}'
+version: '${project.version}'
+main: org.mcausc78.fimespm.FimesPMPlugin
+load: STARTUP
+softdepend: [ PlaceholderAPI ]
+authors: [ MCausc78 ]
+description: A FimesCraft project plugin manager.
