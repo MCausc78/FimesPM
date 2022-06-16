@@ -39,28 +39,28 @@ public class FPM implements CommandExecutor {
                     FimesPMPlugin.getInstance().getConfig().getStringList(ConfigMessagesKeys.NO_PERMISSION).forEach(message -> cs.sendMessage(PAPI.format(ChatColor.translateAlternateColorCodes('&', message), cs)));
                     return true;
                 }
-                b = DisableCommand.execute(cs, ArrayUtils.getElement(args, 2, ""), label);
+                b = DisableCommand.execute(cs, ArrayUtils.getElement(args, 1, ""), label);
                 break;
             case "enable":
                 if(!(cs.hasPermission("fimespm.command.fpm.enable"))) {
                     FimesPMPlugin.getInstance().getConfig().getStringList(ConfigMessagesKeys.NO_PERMISSION).forEach(message -> cs.sendMessage(PAPI.format(ChatColor.translateAlternateColorCodes('&', message), cs)));
                     return true;
                 }
-                b = EnableCommand.execute(cs, ArrayUtils.getElement(args, 2, ""), label);
+                b = EnableCommand.execute(cs, ArrayUtils.getElement(args, 1, ""), label);
                 break;
             case "load":
                 if(!(cs.hasPermission("fimespm.command.fpm.load"))) {
                     FimesPMPlugin.getInstance().getConfig().getStringList(ConfigMessagesKeys.NO_PERMISSION).forEach(message -> cs.sendMessage(PAPI.format(ChatColor.translateAlternateColorCodes('&', message), cs)));
                     return true;
                 }
-                b = LoadCommand.execute(cs, ArrayUtils.getElement(args, 2, ""), label);
+                b = LoadCommand.execute(cs, ArrayUtils.getElement(args, 1, ""), label);
                 break;
             case "restart":
                 if(!(cs.hasPermission("fimespm.command.fpm.restart"))) {
                     FimesPMPlugin.getInstance().getConfig().getStringList(ConfigMessagesKeys.NO_PERMISSION).forEach(message -> cs.sendMessage(PAPI.format(ChatColor.translateAlternateColorCodes('&', message), cs)));
                     return true;
                 }
-                b = RestartCommand.execute(cs, ArrayUtils.getElement(args, 2, ""), label);
+                b = RestartCommand.execute(cs, ArrayUtils.getElement(args, 1, ""), label);
                 break;
             default:
                 if(sub.isEmpty()) {

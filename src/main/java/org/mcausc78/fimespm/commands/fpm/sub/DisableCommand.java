@@ -16,7 +16,7 @@ public class DisableCommand {
         } else if(Bukkit.getServer().getPluginManager().getPlugin(plugin) == null) {
             FimesPMPlugin.getInstance().getConfig().getStringList(ConfigMessagesKeys.ERROR_PLUGIN_MISSING).forEach(message -> cs.sendMessage(PAPI.format(ChatColor.translateAlternateColorCodes('&', message), cs)));
             return true;
-        } else if(!(Bukkit.getServer().getPluginManager().getPlugin(plugin) != null && Bukkit.getServer().getPluginManager().getPlugin(plugin).isEnabled())) {
+        } else if(!(Bukkit.getServer().getPluginManager().getPlugin(plugin).isEnabled())) {
             FimesPMPlugin.getInstance().getConfig().getStringList(ConfigMessagesKeys.DISABLE_ERROR_PLUGIN_ENABLED_COMMAND).forEach(message -> cs.sendMessage(PAPI.format(ChatColor.translateAlternateColorCodes('&', message), cs)));
             return true;
         }
