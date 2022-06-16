@@ -5,3 +5,8 @@ load: STARTUP
 softdepend: [ PlaceholderAPI ]
 authors: [ MCausc78 ]
 description: A FimesCraft project plugin manager.
+commands:
+  fpm:
+    description: 'Manage plugins'
+    usage: '/<command> (Startup error)'
+    

@@ -8,6 +8,7 @@ public class FimesPMPlugin extends JavaPlugin {
     @Override
     public void onEnable() {
         instance = this;
+        saveDefaultConfig();
         getCommand("fpm").setExecutor(new FPM());
     }
 
