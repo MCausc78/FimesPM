@@ -7,10 +7,8 @@ import org.mcausc78.fimespm.FimesPMPlugin;
 import org.mcausc78.fimespm.utils.PAPI;
 
 public class HelpCommand {
-    public static boolean execute(CommandSender cs) {
-        FimesPMPlugin.getInstance().getConfig().getStringList(String.valueOf(ConfigMessagesKeys.HELP_LIST)).forEach(message -> {
-            cs.sendMessage(PAPI.format(ChatColor.translateAlternateColorCodes('&', message), cs));
-        });
+    public static boolean execute(CommandSender cs, String label) {
+        FimesPMPlugin.getInstance().getConfig().getStringList(ConfigMessagesKeys.HELP_LIST).forEach(message -> cs.sendMessage(PAPI.format(ChatColor.translateAlternateColorCodes('&', message), cs).replace("$label$", label)));
         return true;
     }
 }

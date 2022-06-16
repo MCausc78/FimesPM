@@ -8,27 +8,19 @@ import org.mcausc78.fimespm.FimesPMPlugin;
 import org.mcausc78.fimespm.utils.PAPI;
 
 public class EnableCommand {
-    public static boolean execute(CommandSender cs, String plugin) {
+    public static boolean execute(CommandSender cs, String plugin, String label) {
         if(plugin.isEmpty()) {
-            FimesPMPlugin.getInstance().getConfig().getStringList(String.valueOf(ConfigMessagesKeys.ENABLE_USAGE_COMMAND)).forEach(message -> {
-                cs.sendMessage(PAPI.format(ChatColor.translateAlternateColorCodes('&', message), cs));
-            });
+            FimesPMPlugin.getInstance().getConfig().getStringList(ConfigMessagesKeys.ENABLE_USAGE_COMMAND).forEach(message -> cs.sendMessage(PAPI.format(ChatColor.translateAlternateColorCodes('&', message), cs).replace("$label$", label)));
             return true;
         } else if(Bukkit.getServer().getPluginManager().getPlugin(plugin) == null) {
-            FimesPMPlugin.getInstance().getConfig().getStringList(String.valueOf(ConfigMessagesKeys.ERROR_PLUGIN_MISSING)).forEach(message -> {
-                cs.sendMessage(PAPI.format(ChatColor.translateAlternateColorCodes('&', message), cs));
-            });
+            FimesPMPlugin.getInstance().getConfig().getStringList(ConfigMessagesKeys.ERROR_PLUGIN_MISSING).forEach(message -> cs.sendMessage(PAPI.format(ChatColor.translateAlternateColorCodes('&', message), cs)));
             return true;
         } else if(Bukkit.getServer().getPluginManager().getPlugin(plugin).isEnabled()) {
-            FimesPMPlugin.getInstance().getConfig().getStringList(String.valueOf(ConfigMessagesKeys.ENABLE_ERROR_PLUGIN_ENABLED_COMMAND)).forEach(message -> {
-                cs.sendMessage(PAPI.format(ChatColor.translateAlternateColorCodes('&', message), cs));
-            });
+            FimesPMPlugin.getInstance().getConfig().getStringList(ConfigMessagesKeys.ENABLE_ERROR_PLUGIN_ENABLED_COMMAND).forEach(message -> cs.sendMessage(PAPI.format(ChatColor.translateAlternateColorCodes('&', message), cs)));
             return true;
         }
         Bukkit.getPluginManager().enablePlugin(Bukkit.getPluginManager().getPlugin(plugin));
-        FimesPMPlugin.getInstance().getConfig().getStringList(String.valueOf(ConfigMessagesKeys.ENABLE_SUCCESS_COMMAND)).forEach(message -> {
-            cs.sendMessage(PAPI.format(ChatColor.translateAlternateColorCodes('&', message), cs));
-        });
+        FimesPMPlugin.getInstance().getConfig().getStringList(ConfigMessagesKeys.ENABLE_SUCCESS_COMMAND).forEach(message -> cs.sendMessage(PAPI.format(ChatColor.translateAlternateColorCodes('&', message), cs)));
         return true;
     }
 }

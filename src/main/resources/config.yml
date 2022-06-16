@@ -1,0 +1,48 @@
+settings:
+  autoenable-when-loaded: false
+language:
+  fpm-command:
+    no-permission:
+      - '&7[&6&lFPM&7] &cНет прав.'
+    tryhelp:
+      - '&7[&6&lFPM&7] &fНапишите &d/$label$ help&f чтобы получить информацию.'
+    help:
+      - '&7&m---------- [&6&lFPM&7&m] ----------&r'
+      - '&7- &6/$label$ help &f- &7Отображает это.'
+      - '&7- &6/$label$ disable <плагин> &f- &7Выключить плагин.'
+      - '&7- &6/$label$ enable <плагин> &f- &7Включить плагин.'
+      - '&7- &6/$label$ load <файл> &f- &7Загрузить плагин.'
+      - '&7- &6/$label$ restart <плагин> &f- &7Перезапустить плагин.'
+    unknown-command:
+      - '&7[&6&lFPM&7] &cНеизвестная подкоманда.'
+    sub:
+      disable:
+        usage:
+        - '&7[&6&lFPM&7] &cИспользование: /$label$ disable <плагин>'
+        success:
+        - '&7[&6&lFPM&7] &aПлагин $plugin.name$ был выключен.'
+        plugin-is-disabled:
+        - '&7[&6&lFPM&7] &cОшибка: плагин выключен.'
+      enable:
+        usage:
+          - '&7[&6&lFPM&7] &cИспользование: /$label$ enable <плагин>'
+        success:
+          - '&7[&6&lFPM&7] &aПлагин $plugin.name$ был включен.'
+        plugin-is-enabled:
+          - '&7[&6&lFPM&7] &cОшибка: плагин включен.'
+      load:
+        usage:
+          - '&7[&6&lFPM&7] &cИспользование: /$label$ enable <плагин>'
+        success:
+          - '&7[&6&lFPM&7] &aПлагин $plugin.name$ был загружен.'
+        success-and-enabled:
+          - '&7[&6&lFPM&7] &aПлагин $plugin.name$ был загружен и включен.'
+        file-is-missing:
+          - '&7[&6&lFPM&7] &cФайла не существует.'
+      restart:
+        usage:
+          - '&7[&6&lFPM&7] &cИспользование: /$label$ restart <плагин>'
+        success:
+          - '&7[&6&lFPM&7] &aПлагин $plugin.name$ был перезапущен.'
+  plugin-missing:
+    - '&7[&6&lFPM&7] &cПлагин не найден.'
