@@ -7,7 +7,7 @@ import org.bukkit.entity.Player;
 
 public class PAPI {
     public static boolean isEnabled() {
-        return Bukkit.getServer().getPluginManager().getPlugin("PlaceholderAPI") != null
+        return Bukkit.getServer().getPluginManager().getPlugin("PlaceholderAPI") != null;
     }
     public static String format(String m, Player p) {
         if(isEnabled()) {
@@ -18,7 +18,7 @@ public class PAPI {
     public static String format(String m, CommandSender cs) {
         Player p;
         if((cs instanceof Player)) {
-            p = cs;
+            p = (Player)cs;
         } else {
             p = null;
         }
