@@ -20,14 +20,14 @@ public class FPM implements CommandExecutor {
     public boolean onCommand(CommandSender cs, Command cmd, String label, String[] args) {
         String sub = ArrayUtils.getElement(args, 0, "");
         boolean b;
-        if(cs.hasPermission("fimespm.command.fpm")) {
+        if(!(cs.hasPermission("fimespm.command.fpm"))) {
             FimesPMPlugin.getInstance().getConfig().getStringList(ConfigMessagesKeys.NO_PERMISSION).forEach(message -> cs.sendMessage(PAPI.format(ChatColor.translateAlternateColorCodes('&', message), cs)));
             return true;
         }
         switch(sub) {
             case "help":
                 //b = new HelpCommand().execute(cs, ArrayUtils.getElement(args, 1, ""), label);
-                if(cs.hasPermission("fimespm.command.fpm.help")) {
+                if(!(cs.hasPermission("fimespm.command.fpm.help"))) {
                     FimesPMPlugin.getInstance().getConfig().getStringList(ConfigMessagesKeys.NO_PERMISSION).forEach(message -> cs.sendMessage(PAPI.format(ChatColor.translateAlternateColorCodes('&', message), cs)));
                     return true;
                 }
@@ -35,28 +35,28 @@ public class FPM implements CommandExecutor {
 
                 break;
             case "disable":
-                if(cs.hasPermission("fimespm.command.fpm.disable")) {
+                if(!(cs.hasPermission("fimespm.command.fpm.disable"))) {
                     FimesPMPlugin.getInstance().getConfig().getStringList(ConfigMessagesKeys.NO_PERMISSION).forEach(message -> cs.sendMessage(PAPI.format(ChatColor.translateAlternateColorCodes('&', message), cs)));
                     return true;
                 }
                 b = DisableCommand.execute(cs, ArrayUtils.getElement(args, 2, ""), label);
                 break;
             case "enable":
-                if(cs.hasPermission("fimespm.command.fpm.enable")) {
+                if(!(cs.hasPermission("fimespm.command.fpm.enable"))) {
                     FimesPMPlugin.getInstance().getConfig().getStringList(ConfigMessagesKeys.NO_PERMISSION).forEach(message -> cs.sendMessage(PAPI.format(ChatColor.translateAlternateColorCodes('&', message), cs)));
                     return true;
                 }
                 b = EnableCommand.execute(cs, ArrayUtils.getElement(args, 2, ""), label);
                 break;
             case "load":
-                if(cs.hasPermission("fimespm.command.fpm.load")) {
+                if(!(cs.hasPermission("fimespm.command.fpm.load"))) {
                     FimesPMPlugin.getInstance().getConfig().getStringList(ConfigMessagesKeys.NO_PERMISSION).forEach(message -> cs.sendMessage(PAPI.format(ChatColor.translateAlternateColorCodes('&', message), cs)));
                     return true;
                 }
                 b = LoadCommand.execute(cs, ArrayUtils.getElement(args, 2, ""), label);
                 break;
             case "restart":
-                if(cs.hasPermission("fimespm.command.fpm.restart")) {
+                if(!(cs.hasPermission("fimespm.command.fpm.restart"))) {
                     FimesPMPlugin.getInstance().getConfig().getStringList(ConfigMessagesKeys.NO_PERMISSION).forEach(message -> cs.sendMessage(PAPI.format(ChatColor.translateAlternateColorCodes('&', message), cs)));
                     return true;
                 }
